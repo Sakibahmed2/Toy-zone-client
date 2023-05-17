@@ -13,6 +13,11 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Gallery */}
+            <div>
+                
+            </div>
         </div>
     );
 };
