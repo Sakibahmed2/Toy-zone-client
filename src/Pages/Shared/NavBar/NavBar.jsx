@@ -22,13 +22,13 @@ const NavBar = () => {
                 </div>
                 <div className='text-lg flex font-semibold'>
                     <Link to='/'>Home</Link>
-                    <Link className='mx-12' to='/'>My toys</Link>
+                    <Link className='mx-12' to='/alltoys'>All toys</Link>
                     <Link to='/'>Blog</Link>
 
                     {
                         user ? <>
-                            <Link className='mx-12' to='/'>All toys</Link>
-                            <Link to='/'>Add toys</Link>
+                            <Link className='mx-12' to='/'>My toys</Link>
+                            <Link to='/'>Add a toys</Link>
                             <button onClick={handleSingOut} className='ml-12' >Sing Out</button>
 
                         </>

@@ -6,7 +6,7 @@ const ErrorPage = () => {
 
     return (
         <div className='flex container'>
-            <img src="https://img.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_114360-1932.jpg?size=626&ext=jpg&ga=GA1.2.868909325.1665327837&semt=sph" alt="" />
+            <img src="https://img.freepik.com/free-vector/oops-404-error-with-broken-robot-concept-illustration_114360-5529.jpg?size=626&ext=jpg&ga=GA1.1.868909325.1665327837&semt=ais" alt="" />
             <div>
                 <div className='container flex items-center justify-center px-5 mx-auto mt-48'>
                     <div className='max-w-md text-center'>

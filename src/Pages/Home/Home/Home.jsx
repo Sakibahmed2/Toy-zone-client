@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { Children, useEffect, useState } from 'react';
 import Gallery from '../Gallery/Gallery';
 import Toys from '../Toys/Toys';
+import OurSpecialty from '../ExtraSection/OurSpecialty';
 
 
 const Home = () => {
@@ -34,6 +35,9 @@ const Home = () => {
 
             {/* Toys tabs  */}
             <Toys />
+
+            {/* Extra two section */}
+            <OurSpecialty></OurSpecialty>
         </div>
     );
 };

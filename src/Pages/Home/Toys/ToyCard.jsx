@@ -1,14 +1,12 @@
 import Rating from 'react-rating';
 import React from 'react';
-import { FaGoogle, FaRegStar, FaStar } from 'react-icons/fa';
-
+import { FaRegStar, FaStar } from 'react-icons/fa';
 
 const ToyCard = ({ toy }) => {
 
 
 
-
-    console.log(toy);
+    // console.log(toy);
     const { description, image_link, price, rating, toy_name } = toy
     return (
         <div>
@@ -30,7 +28,7 @@ const ToyCard = ({ toy }) => {
                         </span>
                     </div>
                     <div className="card-actions justify-end">
-                        <button className="my-btn">Details </button>
+                        <button  className="my-btn">Details </button>
                     </div>
                 </div>
             </div>
