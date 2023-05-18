@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Gallery from '../Gallery/Gallery';
+import Toys from '../Toys/Toys';
+
 
 const Home = () => {
+    const [toys, setToys] = useState([])
+
+    useEffect(() => {
+        fetch("http://localhost:5000/toys/")
+            .then(res => res.json())
+            .then(data => setToys(data))
+    }, [])
+
+    // console.log(toys);
+
+
+
     return (
         <div>
             <div className="hero mt-12 ">
@@ -17,6 +31,9 @@ const Home = () => {
 
             {/* Gallery */}
             <Gallery />
+
+            {/* Toys tabs  */}
+            <Toys />
         </div>
     );
 };
