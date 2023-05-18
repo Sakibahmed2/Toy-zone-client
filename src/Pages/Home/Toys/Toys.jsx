@@ -11,7 +11,7 @@ const Toys = () => {
     }
 
     useEffect(() =>{
-        fetch(`http://localhost:5000/toys/${tab}`)
+        fetch(`https://toy-zone.vercel.app/toys/${tab}`)
         .then(res => res.json())
         .then(data => setToys(data) )
     },[tab])
