@@ -2,6 +2,7 @@ import React, { Children, useEffect, useState } from 'react';
 import Gallery from '../Gallery/Gallery';
 import Toys from '../Toys/Toys';
 import OurSpecialty from '../ExtraSection/OurSpecialty';
+import Subscribe from '../../ErrorPages/Subscribe';
 
 
 const Home = () => {
@@ -38,6 +39,8 @@ const Home = () => {
 
             {/* Extra two section */}
             <OurSpecialty></OurSpecialty>
+
+            <Subscribe />
         </div>
     );
 };

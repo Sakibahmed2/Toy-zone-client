@@ -7,11 +7,10 @@ const Toys = () => {
 
     const handleTabs = (click) => {
         setTab(click)
-        console.log(click);
     }
 
     useEffect(() =>{
-        fetch(`https://toy-zone.vercel.app/toys/${tab}`)
+        fetch(`http://localhost:5000/category/${tab}`)
         .then(res => res.json())
         .then(data => setToys(data) )
     },[tab])

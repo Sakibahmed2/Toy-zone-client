@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import MyToysTable from './MyToysTable';
+import { AuthContext } from '../../Providers/AuthProviders';
 
 const MyToys = () => {
     const [toys, setToys] = useState([])
+    const {user} = useContext(AuthContext)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mytoys/mauijaloskor@gmail.com`)
+        fetch(`http://localhost:5000/mytoys/${user?.email}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
