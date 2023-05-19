@@ -1,13 +1,14 @@
 import Rating from 'react-rating';
 import React from 'react';
 import { FaRegStar, FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const ToyCard = ({ toy }) => {
 
 
 
     // console.log(toy);
-    const { description, image_link, price, rating, toy_name } = toy
+    const { description, image_link,_id, rating, toy_name } = toy
     return (
         <div>
             <div className="card card-side bg-base-100 shadow-xl lg:py-12 lg:pl-8">
@@ -28,7 +29,9 @@ const ToyCard = ({ toy }) => {
                         </span>
                     </div>
                     <div className="card-actions justify-end">
-                        <button  className="my-btn">Details </button>
+                        <button className="my-btn">
+                            <Link to={`/toyDetail/${_id}`} >Details</Link>
+                        </button>
                     </div>
                 </div>
             </div>

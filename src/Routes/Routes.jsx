@@ -36,12 +36,14 @@ const router = createBrowserRouter([
                 loader: () => fetch('https://toy-zone.vercel.app/toys')
             },
             {
-                path: '/toyDetail',
-                element: <PrivetRoutes> <ToyDetails></ToyDetails></PrivetRoutes>
+                path: '/toyDetail/:id',
+                element: <PrivetRoutes> <ToyDetails></ToyDetails></PrivetRoutes>,
+                loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
+
             },
             {
                 path: '/addToy',
-                element: <AddToy></AddToy>
+                element: <AddToy></AddToy>,
             }
         ]
     },
