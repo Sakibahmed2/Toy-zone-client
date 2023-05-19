@@ -3,24 +3,20 @@ import { AuthContext } from '../../Providers/AuthProviders';
 
 const AllToysTable = ({ toy }) => {
     console.log(toy);
-    const { name, quantity, price, brand, category } = toy || {};
+    const { name, quantity, toy_name, price, brand, category } = toy || {};
 
 
     return (
-        <div>
-
-
-            <tr>
-                <td>{brand}</td>
-                <td>{name}</td>
-                <td>{category}</td>
-                <td>Canada</td>
-                <td>12/16/2020</td>
-                <td>Blue</td>
-            </tr>
-
-
-        </div>
+        <tr className='text-lg font-semibold'>
+            <td>{brand}</td>
+            <td>{toy_name}</td>
+            <td>{category}</td>
+            <td>{price}</td>
+            <td>{quantity}</td>
+            <td>
+                <button className='my-btn'>Detail</button>
+            </td>
+        </tr>
     );
 };
 
