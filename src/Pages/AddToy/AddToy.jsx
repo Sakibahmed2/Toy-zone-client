@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
+import Swal from 'sweetalert2'
+
 
 const AddToy = () => {
 
@@ -33,6 +35,14 @@ const AddToy = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Toy Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
             })
 
     }
@@ -129,11 +139,11 @@ const AddToy = () => {
                             <span className="label-text">Toy description</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name='description' placeholder='Toy description'  className="input input-bordered w-full" />
+                            <input type="text" name='description' placeholder='Toy description' className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
-                <input type="submit" value="Add coffee" className='py-3 mt-3 my-btn w-full' />
+                <input type="submit" value="Add toy" className='py-3 mt-3 my-btn w-full' />
             </form>
         </div>
     );

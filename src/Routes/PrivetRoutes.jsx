@@ -4,12 +4,12 @@ import { Navigate, useLocation } from 'react-router-dom';
 
 const PrivetRoutes = ({children}) => {
 
-    const {user, lodading} = useContext(AuthContext)
+    const {user, loading} = useContext(AuthContext)
     const location = useLocation()
     console.log(location);
 
-    if(lodading){
-        return <button className="btn loading ">loading</button>
+    if(loading){
+        return <button className="btn loading ml-[570px] my-56">loading</button>
     }
 
     if(user){

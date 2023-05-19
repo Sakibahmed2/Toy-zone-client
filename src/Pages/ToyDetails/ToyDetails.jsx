@@ -14,7 +14,7 @@ const ToyDetails = () => {
 
             <div className=" min-h-fit bg-base-100 pb-40">
                 <div className="hero-content flex-col lg:flex-row w-3/4 pt-16 mx-auto">
-                    <figure><img src={image_link} className="rounded-lg h-96 shadow-2xl transition duration-300 ease-in-out hover:scale-110 hover:shadow-lg dark:hover:shadow-black/30" /></figure>
+                   <img src={image_link} className="rounded-lg  h-96 shadow-2xl transition duration-300 ease-in-out hover:scale-110 hover:shadow-lg dark:hover:shadow-black/30" />
                     <div className='ml-8'>
                         <h1 className="text-5xl font-bold">{toy_name}</h1>
                         <p className='py-6'>{description}</p>

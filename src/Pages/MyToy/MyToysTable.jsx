@@ -1,9 +1,32 @@
 import React from 'react';
+import Swal from "sweetalert2";
 
-const MyToysTable = ({ toy }) => {
-    console.log(toy);
 
-    const { image_link, toy_name, quantity, seller_name, seller_email, category, price, rating, description } = toy || {};
+const MyToysTable = ({ toy, toys, setToys }) => {
+    // console.log(toy);
+
+    const handleDelete = id => {
+        console.log(id);
+        fetch(`http://localhost:5000/deleteToy/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.deletedCount > 0) {
+                    Swal.fire(
+                        'Deleted!',
+                        'Your toy has been deleted.',
+                        'success'
+                    )
+                    const previous = toys.filter(toyy => toyy._id !== id);
+                    setToys(previous);
+                }
+
+            })
+    }
+
+    const { _id, image_link, toy_name, quantity, seller_name, seller_email, category, price, rating, description } = toy || {};
     return (
         <tr>
             <th>
@@ -27,7 +50,7 @@ const MyToysTable = ({ toy }) => {
             </td>
             <td>
                 <button className='my-btn '>Update</button>
-                <button className=' bg-red-500 hover:bg-red-600 px-3 py-3 text-white rounded-md font-semibold border-none ml-4'>Delete</button>
+                <button onClick={() => handleDelete(_id)} className=' bg-red-500 hover:bg-red-600 px-3 py-3 text-white rounded-md font-semibold border-none ml-4'>Delete</button>
             </td>
         </tr>
 
