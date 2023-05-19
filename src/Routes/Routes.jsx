@@ -8,6 +8,8 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import ErrorPage from "../Pages/ErrorPages/ErrorPage";
 import AllToys from "../Pages/AllToys/AllToys";
+import ToyDetails from "../Pages/ToyDetails/ToyDetails";
+import PrivetRoutes from "./PrivetRoutes";
 
 const router = createBrowserRouter([
     {
@@ -31,6 +33,10 @@ const router = createBrowserRouter([
                 path: '/alltoys',
                 element: <AllToys></AllToys>,
                 loader: () => fetch('https://toy-zone.vercel.app/toys')
+            },
+            {
+                path: '/toyDetail',
+                element: <PrivetRoutes> <ToyDetails></ToyDetails></PrivetRoutes>
             }
         ]
     },

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
+import { Link } from 'react-router-dom';
 
 const AllToysTable = ({ toy }) => {
     console.log(toy);
@@ -14,7 +15,9 @@ const AllToysTable = ({ toy }) => {
             <td>{price}</td>
             <td>{quantity}</td>
             <td>
-                <button className='my-btn'>Detail</button>
+                <button className='my-btn'>
+                    <Link to='/toyDetail' >Detail</Link>
+                </button>
             </td>
         </tr>
     );
