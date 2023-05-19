@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 
 const AllToysTable = ({ toy }) => {
     console.log(toy);
-    const { name, quantity, toy_name, price, brand, category } = toy || {};
+    const { name, quantity, toy_name, price,  seller_name, category } = toy || {};
 
 
     return (
         <tr className='text-lg font-semibold'>
-            <td>{brand}</td>
+            <td>{seller_name}</td>
             <td>{toy_name}</td>
             <td>{category}</td>
             <td>{price}</td>
