@@ -7,7 +7,7 @@ const MyToys = () => {
     const {user} = useContext(AuthContext)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mytoys/${user?.email}`)
+        fetch(`https://toy-zone-assignment.vercel.app/mytoys/${user?.email}`)
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])

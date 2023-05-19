@@ -12,6 +12,8 @@ import ToyDetails from "../Pages/ToyDetails/ToyDetails";
 import PrivetRoutes from "./PrivetRoutes";
 import AddToy from "../Pages/AddToy/AddToy";
 import MyToys from "../Pages/MyToy/MyToys";
+import UpdateToy from "../Pages/UpdateToy/UpdateToy";
+import Blog from "../Pages/Blog/Blog";
 
 const router = createBrowserRouter([
     {
@@ -34,12 +36,12 @@ const router = createBrowserRouter([
             {
                 path: '/alltoys',
                 element: <AllToys></AllToys>,
-                loader: () => fetch('http://localhost:5000/toys')
+                loader: () => fetch('https://toy-zone-assignment.vercel.app/toys')
             },
             {
                 path: '/toyDetail/:id',
                 element: <PrivetRoutes> <ToyDetails></ToyDetails></PrivetRoutes>,
-                loader: ({params}) => fetch(`http://localhost:5000/toys/${params.id}`)
+                loader: ({params}) => fetch(`https://toy-zone-assignment.vercel.app/toys/${params.id}`)
 
             },
             {
@@ -49,6 +51,15 @@ const router = createBrowserRouter([
             {
                 path: '/myToys',
                 element: <MyToys></MyToys>
+            },
+            {
+                path: '/updateToys/:id',
+                element: <UpdateToy />,
+                loader: ({params}) => fetch(`https://toy-zone-assignment.vercel.app/toys/${params.id}`)
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             }
         ]
     },

@@ -23,7 +23,7 @@ const NavBar = () => {
                 <div className='text-lg flex font-semibold'>
                     <Link to='/'>Home</Link>
                     <Link className='mx-12' to='/alltoys'>All toys</Link>
-                    <Link to='/'>Blog</Link>
+                    <Link to='/blog'>Blog</Link>
 
                     {
                         user ? <>

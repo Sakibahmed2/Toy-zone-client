@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Swal from "sweetalert2";
 
 
@@ -7,7 +8,7 @@ const MyToysTable = ({ toy, toys, setToys }) => {
 
     const handleDelete = id => {
         console.log(id);
-        fetch(`http://localhost:5000/deleteToy/${id}`, {
+        fetch(`https://toy-zone-assignment.vercel.app/deleteToy/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -49,7 +50,9 @@ const MyToysTable = ({ toy, toys, setToys }) => {
                 {quantity}
             </td>
             <td>
-                <button className='my-btn '>Update</button>
+                <button className='my-btn '>
+                    <Link to={`/updateToys/${_id}`}>Update</Link>
+                </button>
                 <button onClick={() => handleDelete(_id)} className=' bg-red-500 hover:bg-red-600 px-3 py-3 text-white rounded-md font-semibold border-none ml-4'>Delete</button>
             </td>
         </tr>
