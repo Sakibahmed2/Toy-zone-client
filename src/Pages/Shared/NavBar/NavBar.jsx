@@ -27,7 +27,7 @@ const NavBar = () => {
 
                     {
                         user ? <>
-                            <Link className='mx-12' to='/'>My toys</Link>
+                            <Link className='mx-12' to='/myToys'>My toys</Link>
                             <Link to='/addToy'>Add a toys</Link>
                             <button onClick={handleSingOut} className='ml-12' >Sing Out</button>
 

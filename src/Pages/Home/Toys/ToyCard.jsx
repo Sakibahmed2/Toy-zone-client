@@ -12,7 +12,7 @@ const ToyCard = ({ toy }) => {
     return (
         <div>
             <div className="card card-side bg-base-100 shadow-xl lg:py-12 lg:pl-8">
-                <img src={image_link} className=' transition duration-300 ease-in-out hover:scale-110 rounded-xl hover:shadow-lg dark:hover:shadow-black/30' alt="" />
+                <img src={image_link} className='h-72 transition duration-300 ease-in-out hover:scale-110 rounded-xl hover:shadow-lg dark:hover:shadow-black/30' alt="" />
                 <div className="card-body">
                     <h2 className="card-title">{toy_name}</h2>
                     <p>{description}</p>

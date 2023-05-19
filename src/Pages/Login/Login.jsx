@@ -6,7 +6,7 @@ import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
 
-    const { setUser, singIn, googleSingIn, githubSingIn } = useContext(AuthContext);
+    const { setUser, singIn, googleSingIn } = useContext(AuthContext);
     const [error, setError] = useState('')
     const navigate = useNavigate()
 
