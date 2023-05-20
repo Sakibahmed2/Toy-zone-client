@@ -1,8 +1,11 @@
-import React, { Children, useEffect, useState } from 'react';
+import React, { Children, useContext, useEffect, useState } from 'react';
 import Gallery from '../Gallery/Gallery';
 import Toys from '../Toys/Toys';
 import OurSpecialty from '../ExtraSection/OurSpecialty';
 import Subscribe from '../../ErrorPages/Subscribe';
+import useTitle from '../../../Hooks/hooks';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Providers/AuthProviders';
 
 
 const Home = () => {
@@ -16,6 +19,9 @@ const Home = () => {
 
     // console.log(toys);
 
+    useTitle('Home')
+
+    const {user} = useContext(AuthContext)
 
 
     return (
@@ -29,7 +35,9 @@ const Home = () => {
                     <div className='lg:ml-8 ' data-aos="fade-left">
                         <h1 className="text-5xl font-bold">We make your children happier with the best toys</h1>
                         <p className="py-6">We have products for all ages. Our assistants always help you to do right choice. A kids toy shop is a store that specializes in selling toys and games designed specifically for children.</p>
-                        <button className="my-btn">Get Started</button>
+                        <button className="my-btn">
+                            {user ? <Link to="/addToy">Add toys</Link> : <Link to="/alltoys">All toys</Link> }
+                        </button>
                     </div>
                 </div>
             </div>

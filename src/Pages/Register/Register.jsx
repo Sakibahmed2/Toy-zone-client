@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProviders';
+import useTitle from '../../Hooks/hooks';
 
 const Register = () => {
     const [error, setError] = useState(null)
@@ -37,6 +38,8 @@ const Register = () => {
 
     }
 
+
+    useTitle('Register')
 
     return (
         <div className="hero  bg-base-200">

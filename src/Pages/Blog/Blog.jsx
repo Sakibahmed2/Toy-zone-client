@@ -1,6 +1,10 @@
 import React from 'react';
+import useTitle from '../../Hooks/hooks';
 
 const Blog = () => {
+
+    useTitle('Blog')
+
     return (
         <div className='grid grid-cols-2 gap-6 container my-12 mx-auto'>
             <div className='border-4 p-4 rounded-xl transition duration-500 ease-in-out hover:border-indigo-500 hover:shadow-lg dark:hover:shadow-black/30'>

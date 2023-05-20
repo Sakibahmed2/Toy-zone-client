@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProviders';
 import Swal from 'sweetalert2'
+import useTitle from '../../Hooks/hooks';
 
 
 const AddToy = () => {
@@ -46,6 +47,8 @@ const AddToy = () => {
             })
 
     }
+
+    useTitle('Add toy')
 
     return (
         <div className='container mx-auto'>

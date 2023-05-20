@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import MyToysTable from './MyToysTable';
 import { AuthContext } from '../../Providers/AuthProviders';
+import useTitle from '../../Hooks/hooks';
 
 const MyToys = () => {
     const [toys, setToys] = useState([])
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
     useEffect(() => {
         fetch(`https://toy-zone-assignment.vercel.app/mytoys/${user?.email}`)
@@ -13,6 +14,7 @@ const MyToys = () => {
     }, [])
     // console.log(toys);
 
+    useTitle('Your toy')
 
     return (
         <div>
@@ -32,10 +34,10 @@ const MyToys = () => {
                     <tbody>
                         {
                             toys.map(toy => <MyToysTable
-                            key={toy._id}
-                            toy={toy}
-                            toys={toys}
-                            setToys={setToys}
+                                key={toy._id}
+                                toy={toy}
+                                toys={toys}
+                                setToys={setToys}
                             ></MyToysTable>)
                         }
                     </tbody>

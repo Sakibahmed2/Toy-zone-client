@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import AllToysTable from './AllToysTable';
+import useTitle from '../../Hooks/hooks';
 
 const AllToys = () => {
     // const toys = useLoaderData()
@@ -8,8 +9,10 @@ const AllToys = () => {
     const [toys , setToys] = useState([])
 
 
+    const dataLimit = 20;
+
     useEffect(() =>{
-        fetch('https://toy-zone-assignment.vercel.app/toys')
+        fetch(`https://toy-zone-assignment.vercel.app/toys?limit=${dataLimit}`)
         .then(res => res.json())
         .then(data =>{
             setToys(data)
@@ -26,6 +29,7 @@ const AllToys = () => {
     }
 
 
+    useTitle('All toy')
 
     return (
         <div className='container mx-auto'>
@@ -42,6 +46,7 @@ const AllToys = () => {
                 <table className="table table-compact w-full">
                     <thead>
                         <tr>
+                            <th>Image</th>
                             <th>Seller</th>
                             <th>Toy Name</th>
                             <th>Category</th>

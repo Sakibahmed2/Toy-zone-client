@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProviders';
 import { FaGoogle } from 'react-icons/fa';
+import useTitle from '../../Hooks/hooks';
 
 
 const Login = () => {
@@ -48,6 +49,8 @@ const Login = () => {
 
         form.reset()
     }
+
+    useTitle('Login')
 
     return (
         <div>
