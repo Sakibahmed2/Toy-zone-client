@@ -2,10 +2,10 @@ import React from 'react';
 
 const Gallery = () => {
     return (
-        <div className='mt-28 container mx-auto'>
+        <div className='mt-28 container  mx-auto'>
             <h2 className='text-4xl font-semibold text-center'>Toy gallery</h2>
             <div className='grid lg:grid-cols-3 gap-8 container mx-auto mt-8'>
-                <img className='max-w-sm transition duration-300 ease-in-out hover:scale-110 rounded-xl hover:shadow-lg dark:hover:shadow-black/30 p-4 border-2 hover:border-teal-300' src="https://images.unsplash.com/photo-1608272841063-67f50df421c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Ym95JTIwcGxheWluZyUyMHdpdGglMjBhY3Rpb24lMjBmaWd1cmUlMjBtYXJ2ZWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+                <img className='max-w-sm transition duration-300 ease-in-out hover:scale-110 rounded-xl hover:shadow-lg dark:hover:shadow-black/30 p-4 border-2 hover:border-teal-300' src="https://images.unsplash.com/photo-1608272841063-67f50df421c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Ym95JTIwcGxheWluZyUyMHdpdGglMjBhY3Rpb24lMjBmaWd1cmUlMjBtYXJ2ZWx8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt=""  />
 
 
                 <img className='max-w-sm transition duration-300 ease-in-out hover:scale-110 rounded-xl hover:shadow-lg dark:hover:shadow-black/30 p-4 border-2 hover:border-yellow-300' src="https://images.unsplash.com/photo-1593067401452-a1ac88689702?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aXJvbm1hbiUyMHRveXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="" />
