@@ -21,8 +21,8 @@ const ToyDetails = () => {
                         <div className='grid grid-cols-2 gap-2 mt-12'>
                             <p className='font-semibold text-lg'>Seller name : {seller_name}</p>
                             {seller_email && <p className='font-semibold text-lg'>Seller email : {seller_email}</p>}
-                            <p className='font-semibold text-lg' >Seller name : {seller_name}</p>
                             <p className='font-semibold text-lg'>Price : {price}</p>
+                            <p className='font-semibold text-lg'>Quantity : {quantity}</p>
                             <span className='font-semibold text-lg'>Rating :  <Rating
                                 placeholderRating={rating}
                                 readonly

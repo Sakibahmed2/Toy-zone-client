@@ -40,21 +40,21 @@ const router = createBrowserRouter([
             {
                 path: '/toyDetail/:id',
                 element: <PrivetRoutes> <ToyDetails></ToyDetails></PrivetRoutes>,
-                loader: ({params}) => fetch(`https://toy-zone-assignment.vercel.app/toys/${params.id}`)
+                loader: ({ params }) => fetch(`https://toy-zone-assignment.vercel.app/toys/${params.id}`)
 
             },
             {
                 path: '/addToy',
-                element: <AddToy></AddToy>,
+                element: <PrivetRoutes><AddToy></AddToy></PrivetRoutes>,
             },
             {
                 path: '/myToys',
-                element: <MyToys></MyToys>
+                element: <PrivetRoutes><MyToys></MyToys></PrivetRoutes>
             },
             {
                 path: '/updateToys/:id',
                 element: <UpdateToy />,
-                loader: ({params}) => fetch(`https://toy-zone-assignment.vercel.app/toys/${params.id}`)
+                loader: ({ params }) => fetch(`https://toy-zone-assignment.vercel.app/toys/${params.id}`)
             },
             {
                 path: '/blog',

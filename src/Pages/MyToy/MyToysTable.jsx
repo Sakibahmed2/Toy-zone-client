@@ -7,24 +7,26 @@ const MyToysTable = ({ toy, toys, setToys }) => {
     // console.log(toy);
 
     const handleDelete = id => {
-        console.log(id);
-        fetch(`https://toy-zone-assignment.vercel.app/deleteToy/${id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.deletedCount > 0) {
-                    Swal.fire(
-                        'Deleted!',
-                        'Your toy has been deleted.',
-                        'success'
-                    )
-                    const previous = toys.filter(toyy => toyy._id !== id);
-                    setToys(previous);
-                }
-
+        const proceed = confirm('Are you want to delete this toy');
+        if (proceed) {
+            fetch(`https://toy-zone-assignment.vercel.app/deleteToy/${id}`, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        Swal.fire(
+                            'Deleted!',
+                            'Your toy has been deleted.',
+                            'success'
+                        )
+                        const previous = toys.filter(toyy => toyy._id !== id);
+                        setToys(previous);
+                    }
+
+                })
+        }
     }
 
     const { _id, image_link, toy_name, quantity, seller_name, seller_email, category, price, rating, description } = toy || {};

@@ -1,18 +1,23 @@
 import Rating from 'react-rating';
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../../Providers/AuthProviders';
 
 const ToyCard = ({ toy }) => {
 
+    const { user } = useContext(AuthContext)
+
 
     const hndleSweetAlart = () => {
-        Swal.fire({
-            title: 'You have to log in first to view details',
-            icon: 'question',
-            confirmButtonText: 'Login'
-        })
+        if (!user) {
+            Swal.fire({
+                title: 'You have to log in first to view details',
+                icon: 'question',
+                confirmButtonText: 'Login'
+            })
+        }
     }
 
 

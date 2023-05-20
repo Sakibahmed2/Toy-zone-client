@@ -5,7 +5,7 @@ const Footer = () => {
         <div>
             <footer className="footer p-10 bg-base-200 text-base-content ">
                 <div>
-                    <img className='fill-current rounded-xl' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbyQtLI870ha38kUm2BvywcisdcrHvzKSH3Xy5qtymjA&s" alt="" />
+                    <img className='fill-current rounded-xl w-20' src="https://img.freepik.com/free-vector/font-design-word-toy-shop-with-many-toys_1308-42318.jpg?size=626&ext=jpg&ga=GA1.1.868909325.1665327837&semt=ais" alt="" />
                     <p>Toy zone Ltd.<br />Providing reliable tech since 2002</p>
                 </div>
                 <div>

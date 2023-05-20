@@ -36,7 +36,7 @@ const Toys = () => {
             </div>
 
             {/* Toys card  */}
-            <div className='container mx-auto grid  lg:grid-cols-2 gap-8'>
+            <div className='container mx-auto grid mt-8   lg:grid-cols-2 gap-8'>
                 {
                     toys.map(toy => <ToyCard
                         key={toy._id}

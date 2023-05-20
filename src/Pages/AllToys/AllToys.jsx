@@ -18,7 +18,7 @@ const AllToys = () => {
 
 
     const handleSearch = () =>{
-        fetch(`http://localhost:5000/searchToyName/${search}`)
+        fetch(`https://toy-zone-assignment.vercel.app/searchToyName/${search}`)
         .then(res => res.json())
         .then(data =>{
             setToys(data);
