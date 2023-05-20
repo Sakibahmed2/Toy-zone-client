@@ -1,14 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import AllToysTable from './AllToysTable';
 
 const AllToys = () => {
+    // const toys = useLoaderData()
+    const [search, setSearch] = useState()
+    const [toys , setToys] = useState([])
 
-    const toys = useLoaderData()
-    // console.log(toys);
+
+    useEffect(() =>{
+        fetch('https://toy-zone-assignment.vercel.app/toys')
+        .then(res => res.json())
+        .then(data =>{
+            setToys(data)
+        })
+    },[])
+
+
+    const handleSearch = () =>{
+        fetch(`http://localhost:5000/searchToyName/${search}`)
+        .then(res => res.json())
+        .then(data =>{
+            setToys(data);
+        })
+    }
+
+
 
     return (
         <div className='container mx-auto'>
+            <div className='flex justify-center mb-8'>
+                <input
+                    onChange={(e) => setSearch(e.target.value)}
+                    type="text"
+                    className="p-1 border border-black rounded-md"
+                    placeholder='Search'
+                />
+                <button onClick={handleSearch} className='bg-indigo-500 hover:bg-indigo-600 px-3 rounded-md font-semibold text-white'>Search</button>
+            </div>
             <div className="overflow-x-auto">
                 <table className="table table-compact w-full">
                     <thead>

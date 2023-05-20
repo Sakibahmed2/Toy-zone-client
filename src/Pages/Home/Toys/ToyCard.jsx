@@ -2,13 +2,22 @@ import Rating from 'react-rating';
 import React from 'react';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const ToyCard = ({ toy }) => {
 
 
+    const hndleSweetAlart = () => {
+        Swal.fire({
+            title: 'You have to log in first to view details',
+            icon: 'question',
+            confirmButtonText: 'Login'
+        })
+    }
+
 
     // console.log(toy);
-    const { description, image_link,_id, rating, toy_name } = toy
+    const { description, image_link, _id, rating, toy_name } = toy
     return (
         <div>
             <div className="card card-side bg-base-100 shadow-xl lg:py-12 lg:pl-8">
@@ -30,7 +39,7 @@ const ToyCard = ({ toy }) => {
                     </div>
                     <div className="card-actions justify-end">
                         <button className="my-btn">
-                            <Link to={`/toyDetail/${_id}`} >Details</Link>
+                            <Link onClick={hndleSweetAlart} to={`/toyDetail/${_id}`} >Details</Link>
                         </button>
                     </div>
                 </div>
