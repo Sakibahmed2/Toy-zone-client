@@ -10,7 +10,7 @@ const Toys = () => {
     }
 
     useEffect(() =>{
-        fetch(`http://localhost:5000/category/${tab}`)
+        fetch(`https://toy-zone-assignment.vercel.app/category/${tab}`)
         .then(res => res.json())
         .then(data => setToys(data) )
     },[tab])

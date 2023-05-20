@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateToy = () => {
 
@@ -15,32 +16,32 @@ const UpdateToy = () => {
         const description = form.description.value;
         const _id = id;
 
-        const newUpdate = {quantity, price, description, _id}
+        const newUpdate = { quantity, price, description, _id }
         console.log(newUpdate);
 
-        // fetch(`https://toy-zone-assignment.vercel.app/toys/${_id}`,{
-        //     method: 'PUT',
-        //     headers: {
-        //         'content-type':'application/json'
-        //     },
-        //     body: JSON.stringify(newUpdate)
-        // })
-        // .then(res => res.json())
-        // .then(data =>{
-        //     console.log(data);
-        // })
-
-        fetch(`https://toy-zone-assignment.vercel.app/toys/${_id}`,{
-            method: 'PUT',
-            headers:{
-                'Content-Type': 'application/json',
+        fetch(`https://toy-zone-assignment.vercel.app/updateToys/${_id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
             },
-            body: JSON.stringify(newUpdate)
+            body: JSON.stringify(newUpdate),
         })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Toy update successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
+
+
+
+
+
     }
 
     return (
@@ -52,7 +53,7 @@ const UpdateToy = () => {
                             <span className="label-text">Available quantity</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name='quantity' placeholder="Available quantity" className="input input-bordered w-full" />
+                            <input type="text" name='quantity' placeholder="Available quantity" defaultValue={toy?.quantity} className="input input-bordered w-full" />
                         </label>
                     </div>
                     <div className="form-control ">
@@ -60,7 +61,7 @@ const UpdateToy = () => {
                             <span className="label-text">Toy price</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name='price' placeholder="Enter toy price" className="input input-bordered w-full" />
+                            <input type="text" name='price' placeholder="Enter toy price" defaultValue={toy?.price} className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>
@@ -71,7 +72,7 @@ const UpdateToy = () => {
                         <span className="label-text">Toy description</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name='description' placeholder='Toy description' className="input input-bordered w-full" />
+                        <input type="text" name='description' defaultValue={toy?.description} placeholder='Toy description' className="input input-bordered w-full" />
                     </label>
                 </div>
 
